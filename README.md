@@ -17,6 +17,8 @@ There are many ways you can contribute to OpenIMSDK:
 - Write code or submit pull requests
 - Spread the word about OpenIMSDK and encourage others to get involved
 
+If you're new to the community, or participating in an open source community for the first time, we highly recommend you take a look at our [community guide](./CONTRIBUTING.md)
+
 We value all types of contributions to our community, and we strive to make contributing as easy and accessible as possible.
 
 ## Getting Started
