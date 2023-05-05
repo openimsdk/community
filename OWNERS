@@ -1,0 +1,9 @@
+# The OWNERS file is used by prow to automatically merge approved PRs.
+
+approvers:
+- cubxxw
+reviewers:
+- cubxxw
+
+# This directory is maintained by the cubxxw teams
+./ @cubxxw
