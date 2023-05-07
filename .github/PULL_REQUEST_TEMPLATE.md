@@ -1,21 +1,42 @@
-<!--  Thanks for sending a pull request!  Here are some tips for you:
+<!-- 
+🫰 Thanks for sending a pull request!  Here are some tips for you:
 
 1. If this is your first time, please read our contributor guidelines: 
 ->📇 https://github.com/OpenIMSDK/community/blob/main/CONTRIBUTING.md
+
 2. Ensure you have added or ran the appropriate tests for your PR:
 -->
 
-#### What type of PR is this?
-<--
+#### 🔍 What type of PR is this?
+<!--
 We need to tag this PR, which you should learn about in the contributor guide.
+
+Add one of the following kinds:
+/kind bug
+/kind cleanup
+/kind documentation
+/kind feature
+
+Optionally add one or more of the following kinds if applicable:
+/kind api-change
+/kind deprecation
+/kind failing-test
+/kind flake
+/kind regression
 -->
 
 
-#### What this PR does / why we need it:
+#### 👀 What this PR does / why we need it:
+<!-- Make sure your pr passes the CI checks and do check the following fields as needed - -->
+- [ ] My pull request adheres to the code style of this project
+- [ ] My code requires changes to the documentation
+- [ ] I have updated the documentation as required
+- [ ] All the tests have passed
+
+<!--Why do we need this PR?-->
 
 
-
-#### Which issue(s) this PR fixes:
+#### 🅰 Which issue(s) this PR fixes:
 <!--
 *Automatically closes linked issue when PR is merged.
 Usage: `Fixes #<issue number>`, or `Fixes (paste link of issue)`.
@@ -25,19 +46,16 @@ If there is a relevant PR, use Link #{ID}
 Fixes #
 
 
-#### Special notes for your reviewer:
+#### 📝 Special notes for your reviewer:
 
 
 
-#### Does this PR introduce a user-facing change?
+
+#### 🎯 Describe how to verify it
 
 
 
-#### Describe how to verify it
-
-
-
-#### Additional documentation e.g., KEPs (OpenIM Enhancement Proposals), usage docs, etc.:
+#### 📑 Additional documentation e.g., KEPs (OpenIM Enhancement Proposals), usage docs, etc.:
 <!--
 This section can be blank if this pull request does not require a release note.
 
