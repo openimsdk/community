@@ -106,7 +106,7 @@ In addition to that, we'd love to invite you to [Join Our Slack](https://join.sl
 
 When documenting a new design, we recommend a 2-step approach:
 
-1. Use the short-form **RFC** template to outline your ideas and get early feedback.
+1. Use the short-form [**RFC** template](https://docs.google.com/document/d/e/2PACX-1vTqvLkjWjchvA-TBGMNVsbjKx_aqZedOQ-No5zm_2kmiMuluK3zy1VlVAY2y3hgbWvw6zF1ZLLib8l1/pub?embedded=true) to outline your ideas and get early feedback.
 2. Once you have received sufficient feedback and consensus, you may use the longer-form design doc template to specify and discuss your design in more details.
 
 In order to contribute a feature to OpenIMSDK you'll need to go through the following steps:
