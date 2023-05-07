@@ -257,7 +257,7 @@ You can find some very formal PR in [RFC](https://github.com/OpenIMSDK/community
 
 + As long as you are working on your **PR**, please mark it as a draft
 + Please make sure that your **PR** is up-to-date with the latest changes in `main`
-+ Mention the issue that your **PR** is addressing.  For example, `Fix: #{ID_1}, #{ID_2}`
++ Mention the issue that your **PR** is addressing.  For example, `Fixes: #{ID_1}, #{ID_2}`
 + Make sure that your **PR** passes all checks
 
 **🈴 Reviewing PRs:**
