@@ -6,8 +6,8 @@
 - Author(s): (Github usernames)
 - Status: Draft <!-- Acceptable values: Draft, Approved, On Hold, Superseded -->
 - RFC Pull Request: (leave blank)
-- OpenIM Pull Request: (leave blank)
-- OpenIM Issue: (leave blank)
+- OpenIMSDK Pull Request: (leave blank)
+- OpenIMSDK Issue: (leave blank)
 - Supersedes: (put "N/A" unless this replaces an existing RFC, then link to that RFC)
 
 
