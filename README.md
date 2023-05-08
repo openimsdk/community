@@ -42,5 +42,3 @@ I apologize for the mistake. You are correct that the license used by OpenIMSDK 
 This means that you are free to use, modify, and distribute the toolkit for any purpose, as long as you include the original copyright notice and license terms.
 
 Thank you for your interest in OpenIMSDK, and we look forward to working with you to build a great instant messaging software development community!
-
-<iframe style="width:100%;height:auto;min-width:600px;min-height:400px;" src="https://star-history.com/embed?secret=#OpenIMSDK/Open-IM-Server&Date" frameBorder="0"></iframe>
