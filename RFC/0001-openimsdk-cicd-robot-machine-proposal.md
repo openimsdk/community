@@ -1,4 +1,4 @@
-# [RFC #0001] OpenIMSDK proposal template
+# [RFC #0001] OpenIMSDK cicd robot machine proposal
 
 ## Meta #0001
 
