@@ -1,4 +1,4 @@
-# [RFC #0001] Introduction of `component-base` Repository
+# [RFC #0006](https://github.com/OpenIMSDK/community/edit/main/RFC/0006-openim-component-base.md) Introduction of `component-base` Repository
 
 <!--  🤖 design template: https://github.com/OpenIMSDK/community/blob/main/0000-template.md  ⚠️ After design completion, please submit a PR to https://github.com/OpenIMSDK/community/tree/main/RFC according to the specification. -->
 
@@ -8,9 +8,9 @@
 - Start Date: 2023-08-25
 - Author(s): @cubxxw
 - Status: Draft
-- RFC Pull Request: (leave blank)
+- RFC Pull Request: https://github.com/OpenIMSDK/community/edit/main/RFC/0006-openim-component-base.md
 - OpenIMSDK Pull Request: (leave blank)
-- OpenIMSDK Issue: (leave blank)
+- OpenIMSDK Issue: https://github.com/OpenIMSDK/Open-IM-Server/issues/955
 - Supersedes: N/A
 
 ## 📇Topics
