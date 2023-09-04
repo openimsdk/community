@@ -1,6 +1,4 @@
-# 125: OpenIM 集群化部署提案 [RFC] Cluster Deployment for OpenIMSDK
-
-> [RFC #0007] Cluster Deployment for OpenIMSDK
+# [RFC #0007](https://github.com/OpenIMSDK/community/edit/main/RFC/0007-openim-cluster-deployment.md) Cluster Deployment for OpenIMSDK
 
 <!-- 🤖 design template: https://github.com/OpenIMSDK/community/blob/main/0000-template.md ⚠️ Please submit a PR to https://github.com/OpenIMSDK/community/tree/main/RFC according to the specification after the design is completed -->
 
@@ -10,7 +8,7 @@
 - Start Date: 2023-09-04
 - Author(s): @cubxxw
 - Status: Draft
-- RFC Pull Request: (leave blank)
+- RFC Pull Request: https://github.com/OpenIMSDK/community/edit/main/RFC/0007-openim-cluster-deployment.md
 - OpenIMSDK Pull Request: (leave blank)
 - OpenIMSDK Issue: (leave blank)
 - Supersedes: N/A
