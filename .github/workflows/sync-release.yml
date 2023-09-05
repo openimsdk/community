@@ -6,8 +6,12 @@
 name: Synchronize kubecub public code to other repositories
 on:
     push:
+        paths:
+            - scripts/*
+            - docs/*
+            - config/*
         branches:
-          - main
+          - release-v*.*
     workflow_dispatch:
 
 jobs:
@@ -21,7 +25,7 @@ jobs:
         uses: BetaHuhn/repo-file-sync-action@latest
         with:
           GH_INSTALLATION_TOKEN: "${{ secrets.BOT_GITHUB_TOKEN }}"
-          CONFIG_PATH: .github/sync.yml
+          CONFIG_PATH: .github/sync-release.yml
           ORIGINAL_MESSAGE: true
           SKIP_PR: true
           COMMIT_EACH_FILE: false
