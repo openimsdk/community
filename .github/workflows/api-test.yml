@@ -12,37 +12,31 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-name: OpenIM Linux System E2E Test
+name: OpenIM API TEST
 
-on:
-  workflow_dispatch:
-  pull_request:
+on: 
   push:
-  schedule:
-    # run e2e test every 4 hours
-    - cron: 0 */4 * * *
+    branches:
+        - main
+    paths-ignore:
+        - "docs/**"
+        - "README.md"
+        - "README_zh-CN.md"
+        - "CONTRIBUTING.md"
+  pull_request:
+    branches:
+        - main
+    paths-ignore:
+        - "README.md"
+        - "README_zh-CN.md"
+        - "CONTRIBUTING.md"
+        - "docs/**"
+
+env:
+  GO_VERSION: "1.19"
+  GOLANGCI_VERSION: "v1.50.1"
 
 jobs:
-  build:
-    name: Test
-    runs-on: ubuntu-latest
-    env:
-      GO111MODULE: on
-    steps:
-
-      - name: Set up Go 1.21
-        uses: actions/setup-go@v4
-        with:
-          go-version: 1.21
-        id: go
-
-      - name: Check out code into the Go module directory
-        uses: actions/checkout@v4
-
-      - name: Create e2e test
-        run: |
-          echo "...test e2e"
-
   execute-linux-systemd-scripts:
     name: Execute OpenIM script on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
@@ -79,22 +73,18 @@ jobs:
         sudo make tidy
         sudo make tools.verify.go-gitlint
 
-    - name: Build, Start
+    - name: Build, Start, Check Services and Print Logs
       run: |
-        sudo ./scripts/install/install.sh -i
+        sudo ./scripts/install/install.sh -i && \
+        sudo ./scripts/install/install.sh -s && \
+        (echo "An error occurred, printing logs:" && sudo cat ./_output/logs/* 2>/dev/null)
 
-    - name: Exec OpenIM System Status Chack
+    - name: Run Test
       run: |
-        sudo ./scripts/install/install.sh -s
+        sudo make test-api && \
+        (echo "An error occurred, printing logs:" && sudo cat ./_output/logs/* 2>/dev/null)
 
-    - name: Exec OpenIM API test
+    - name: Stop Services
       run: |
-        sudo make test-api
-    
-    - name: Exec OpenIM E2E test
-      run: |
-        sudo make test-e2e
-
-    - name: Exec OpenIM System uninstall
-      run: |
-        sudo ./scripts/install/install.sh -u
+        sudo ./scripts/install/install.sh -u && \
+        (echo "An error occurred, printing logs:" && sudo cat ./_output/logs/* 2>/dev/null)
