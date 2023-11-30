@@ -9,9 +9,9 @@
 - Start Date: 2023-11-30
 - Author(s): @cubxxw 
 - Status: Draft
-- RFC Pull Request: (leave blank)
-- OpenIMSDK Pull Request: (leave blank)
-- OpenIMSDK Issue: (leave blank)
+- RFC Pull Request: https://github.com/openimsdk/helm-charts/pull/31
+- OpenIMSDK Pull Request: https://github.com/openimsdk/helm-charts/pull/31
+- OpenIMSDK Issue: https://github.com/openimsdk/helm-charts/pull/30
 - Supersedes: N/A
 
 ## Summary
