@@ -1,4 +1,3 @@
 # The Contributor License Agreement
-暂时没有设置 CLA~ 
 
-留存
++ [☀️ https://github.com/openim-sigs/cla](https://github.com/openim-sigs/cla)
