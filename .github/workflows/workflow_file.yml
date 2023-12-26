@@ -1,0 +1,17 @@
+name: Workflow Name
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  job_name:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Lock threads
+        uses: dessant/lock-threads@v4
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
