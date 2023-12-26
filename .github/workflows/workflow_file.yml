@@ -1,0 +1,19 @@
+name: Translate Issues
+
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Translate Issue
+        uses: usthe/issues-translate-action@v2.7
+        with:
+          github_token: ${{ secrets.CORRECT_GITHUB_TOKEN }}
+          source_language: auto
+          target_language: en
