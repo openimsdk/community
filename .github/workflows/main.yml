@@ -1,0 +1,22 @@
+name: Main Workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Run issues-translate-action
+      uses: usthe/issues-translate-action@v2.7
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
