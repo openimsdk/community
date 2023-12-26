@@ -11,9 +11,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Translate Issue
-        uses: usthe/issues-translate-action@v2.7
+      - name: Run Contributor Assistant
+        uses: contributor-assistant/github-action@v2.3.1
         with:
+          github_token: ${{ secrets.CORRECT_GITHUB_TOKEN }}
           github_token: ${{ secrets.CORRECT_GITHUB_TOKEN }}
           source_language: auto
           target_language: en
