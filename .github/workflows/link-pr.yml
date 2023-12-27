@@ -45,7 +45,9 @@ jobs:
 
       - name: Create Issue From File
         if: env.lychee_exit_code != 0
-        uses: peter-evans/create-issue-from-file@v4
+        uses: alex-page/github-project-automation-plus@v0.8.3
+        env:
+          GITHUB_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN }}
         with:
           title: Bug reports for links in OpenIM docs
           content-filepath: ./lychee/out.md
