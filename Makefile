@@ -1,5 +1,6 @@
 init:
 	# Commands to initialize the project
+	
 	# For example, if the project requires certain dependencies to be installed
 	# sudo apt-get install -y dependency1 dependency2
 	# Or if it requires certain environment variables to be set
