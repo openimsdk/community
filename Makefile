@@ -1,10 +1,10 @@
 init:
 	# Commands to initialize the project
-	# For example, if the project requires certain dependencies to be installed
-	# sudo apt-get install -y dependency1 dependency2
-	# Or if it requires certain environment variables to be set
-	# export VAR1=value1
-	# export VAR2=value2
+	# Install the required dependencies
+	sudo apt-get install -y libssl-dev libffi-dev
+	# Set the required environment variables
+	export ENV1=value1
+	export ENV2=value2
 
 # Existing rules in the Makefile
 ...
