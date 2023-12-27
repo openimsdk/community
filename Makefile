@@ -7,6 +7,10 @@ init:
 	sudo apt-get update && sudo apt-get install -y \
 		git \
 		make \
+		gendocs
+	sudo apt-get update && sudo apt-get install -y \
+		git \
+		make \
 		gendocs \
 	# Set up environment variables
 	@echo "Setting up environment variables..."
@@ -17,5 +21,5 @@ init:
 	git remote set-url --push upstream no-pushing
 	# Generate documentation
 	@echo "Generating documentation..."
-	make new-post POST_NAME="openim-offline-deployment-design"
+	make all-docs
 	@echo "Project initialized successfully."
