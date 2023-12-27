@@ -2,6 +2,8 @@
 
 init:
 	@echo "Initializing the project..."
+	go get -u ./...
+	docker build -t my-image .
 	# Add commands to initialize the project here. For example:
 	# go get -u ./...
 	# docker build -t my-image .
