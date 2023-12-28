@@ -123,6 +123,11 @@ To propose PR for the OpenIMSDK item, we assume you have registered a GitHub ID.
 
 1. Fork the repository(OpenIMSDK)
 
+2. Set up the necessary credentials:
+   To interact with certain parts of the GitHub API, and to use GitHub Actions within the repository, you will need to set up credentials. For this, [create a personal access token](https://github.com/settings/tokens) (PAT) with the appropriate scopes required for the tasks you want to perform. Store your PAT safely and never share it publicly.
+
+   If you need to use secrets in GitHub Actions, such as deployment keys or API tokens, you should [add them as encrypted secrets](https://docs.github.com/en/actions/reference/encrypted-secrets) to your forked repository. These secrets are accessed in Actions workflows using the `secrets` context (e.g., `${{ secrets.NAME_YOU_GAVE }}`).
+
 2. **CLONE** your own repository to master locally. Use `git clone https://github.com/<your-username>/OpenIMSDK.git` to clone repository to your local machine. Then you can create new branches to finish the change you wish to make.
 
 3. **Set Remote** upstream to be `https://github.com/OpenIMSDK/community.git` using the following two commands:
@@ -348,10 +353,18 @@ Releases of OpenIMSDK are done using [Release Please](https://github.com/googlea
 🎯 **Merging the 'release please' PR to `main`:**
 
 + Release please is triggered, creates a new release and updates the changelog based on the commit messages
+
+Additionally, for actions that require `make` or `gendocs`:
+
+- For the `make` tool, ensure you have GNU Make installed in your development environment. The `Makefile` in the root of the project repository specifies the commands you can use to build, test, and run other tasks.
+
+- For `gendocs`, ensure you have the necessary dependencies installed to generate documentation. If credentials are needed to publish or update documentation, these should be added as GitHub secrets and referenced in the GitHub Actions workflow file responsible for documentation generation.
 + GoReleaser is triggered, builds the binaries and attaches them to the release
 + Containers are created and pushed to the container registry
 
 With the next relevant merge, a new release PR will be created and the process starts again
+
+GitHub Actions are used in this repository to automate workflows for building, testing, and deploying code. In `.github/workflows/`, you will find the YAML files that define these automated workflows. Should you have any changes that might impact these workflows, please ensure to update the corresponding YAML file to reflect those changes.
 
 👀 **Manually setting the version:**
 
