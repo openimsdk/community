@@ -13,7 +13,7 @@ init:
 	git remote set-url --push upstream no-pushing
 
 	# Install gendocs for document generation
-	sudo apt-get install -y gendocs
+	sudo apt-get install -y doxygen
 
 	# Install go-gitlint for commit message linting
 	sudo apt-get install -y go-gitlint
