@@ -3,8 +3,19 @@
 # Other targets...
 
 init:
-	# Commands to initialize the project
-	# For example:
-	# npm install
-	# or
-	# pip install -r requirements.txt
+	# Initialize the project depedencies
+	go mod download
+
+tidy:
+	# Clean up Python bytecodes and other temporary files
+	find . -name "*.pyc" -delete
+	# Go project specific tidy command
+	go clean
+
+image:
+	# Build a Docker image for the project
+	docker build -t openimsdk-image .
+
+install:
+	# Install the project
+	go install .
