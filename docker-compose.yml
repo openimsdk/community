@@ -1,0 +1,17 @@
+version: '3'
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - '80:80'
+    volumes:
+      - ./data:/data
+  database:
+    image: postgres:latest
+    ports:
+      - '5432:5432'
+    volumes:
+      - ./dbdata:/var/lib/postgresql/data
+  web:
+    depends_on:
+      - database
