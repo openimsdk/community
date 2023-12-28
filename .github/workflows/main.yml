@@ -17,5 +17,10 @@ jobs:
 
       - name: Lock threads
         uses: dessant/lock-threads@v4
+
+      - name: Project Automation
+        uses: alex-page/github-project-automation-plus@v0.8.3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
