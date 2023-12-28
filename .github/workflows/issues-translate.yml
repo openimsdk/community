@@ -1,0 +1,17 @@
+name: Translate Issues
+
+on:
+  issue_comment:
+    types: [created, edited]
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Translate issue comments
+      uses: usthe/issues-translate-action@v2.7
+      with:
+        token: ${{ secrets.TRANSLATE_TOKEN }}
