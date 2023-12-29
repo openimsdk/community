@@ -119,6 +119,20 @@ But keep in mind that there is no guarantee of it being accepted and so it is us
 
 ## Getting Started
 
+#### The 'init' Makefile Rule
+
+The `init` rule in the [Makefile](./Makefile) is designed to prepare the necessary environment for the project. When you run `make init`, it will check if the correct version of Go is installed, set up the GOPATH, and download all the Go module dependencies required for the project.
+
+This command is essential to properly set up the project before you can start running it. It's one of the first commands you should run after cloning the OpenIMSDK repository.
+
+To use the `init` command, simply run the following in your terminal:
+
+```bash
+make init
+```
+
+You will see output that indicates the initialization process is happening, and once completed, you will have all necessary dependencies installed.
+
 To propose PR for the OpenIMSDK item, we assume you have registered a GitHub ID. Then you could finish the preparation in the following steps:
 
 1. Fork the repository(OpenIMSDK)
