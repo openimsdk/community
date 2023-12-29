@@ -38,16 +38,13 @@ jobs:
           go-version: stable
       # More assembly might be required: Docker logins, GPG, etc. It all depends
       # on your needs.
-      - uses: goreleaser/goreleaser-action@v5
+      - uses: release-drafter/release-drafter@v5
         with:
           # either 'goreleaser' (default) or 'goreleaser-pro':
-          distribution: goreleaser
-          version: latest
-          workdir: .
-          args: release -f ./build/goreleaser.yaml --clean --release-footer-tmpl=scripts/template/footer.md.tmpl --release-header-tmpl=scripts/template/head.md.tmpl
+          config-name: .github/release-drafter.yml
         env:
           USERNAME: ${{ github.repository_owner }}
-          GITHUB_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           FURY_TOKEN: ${{ secrets.FURY_TOKEN }}
           # Your GoReleaser Pro key, if you are using the 'goreleaser-pro'
           # distribution:
