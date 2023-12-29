@@ -1,0 +1,22 @@
+name: Sync Files
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Sync files
+        uses: BetaHuhn/repo-file-sync-action@latest
+        with:
+          source_repo: ${{ github.repository }}
+          destination_repo: openim/website, openim-server, openim-chat
+          source_dir: docs/
+          destination_dir: docs/
+          github_token: ${{ secrets.GITHUB_TOKEN }}
