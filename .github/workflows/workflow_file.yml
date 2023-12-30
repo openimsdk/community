@@ -1,0 +1,20 @@
+name: Translate Issues
+
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Run Contributor Assistant
+        uses: contributor-assistant/github-action@v2.3.1
+        with:
+          github_token: ${{ secrets.CORRECT_GITHUB_TOKEN }}
+          github_token: ${{ secrets.CORRECT_GITHUB_TOKEN }}
+          source_language: auto
+          target_language: en
