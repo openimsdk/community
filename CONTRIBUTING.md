@@ -125,7 +125,13 @@ To propose PR for the OpenIMSDK item, we assume you have registered a GitHub ID.
 
 2. **CLONE** your own repository to master locally. Use `git clone https://github.com/<your-username>/OpenIMSDK.git` to clone repository to your local machine. Then you can create new branches to finish the change you wish to make.
 
-3. **Set Remote** upstream to be `https://github.com/OpenIMSDK/community.git` using the following two commands:
+3. Initialize your local repository using the 'init' Makefile target. This will set up all necessary dependencies and configurations:
+
+   ```bash
+   make init
+   ```
+
+   After initialization, you should **Set Remote** upstream to be `https://github.com/OpenIMSDK/community.git` using the following two commands:
 
    ```bash
    ❯ git remote add upstream https://github.com/OpenIMSDK/community.git
