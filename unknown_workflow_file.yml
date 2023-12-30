@@ -1,0 +1,23 @@
+name: Unknown Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up credentials
+      run: |
+        echo "TOKEN=${{ secrets.GITHUB_TOKEN }}" >> $GITHUB_ENV
+
+    - name: Run issues-translate-action
+      uses: usthe/issues-translate-action@v2.7
+      with:
+        token: ${{ env.TOKEN }}
