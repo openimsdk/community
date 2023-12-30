@@ -1,0 +1,35 @@
+name: Main Workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup PERSONAL_ACCESS_TOKEN
+      uses: actions/setup-env@v1
+      with:
+        env:
+          PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+
+    - name: Setup PERSONAL_ACCESS_TOKEN
+      uses: actions/setup-env@v1
+      with:
+        env:
+          PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+
+    - name: Run issues-translate-action
+      uses: usthe/issues-translate-action@v2.7
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        personal_access_token: ${{ env.PERSONAL_ACCESS_TOKEN }}
