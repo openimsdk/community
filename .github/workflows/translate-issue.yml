@@ -1,0 +1,16 @@
+name: Translate Issue
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Translate Issue
+        uses: usthe/issues-translate-action@v2.7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          translate-token: ${{ secrets.TRANSLATE_TOKEN }}
+          source-lang: auto
+          target-lang: en
