@@ -1,0 +1,15 @@
+name: Main Workflow
+
+on: [push]
+
+jobs:
+  translate_issues:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Translate issues
+      uses: usthe/issues-translate-action@v2.7
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
