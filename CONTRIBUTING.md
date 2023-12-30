@@ -305,6 +305,34 @@ git() {
 }
 ```
 
+#### GitHub Actions Configuration
+
+##### Configuring `dessant/lock-threads@v4` Action
+
+To automate the process of locking closed issues and pull requests after a certain period of inactivity, we use the `dessant/lock-threads@v4` action in our GitHub Actions workflows. This action requires a valid GitHub token to authenticate.
+
+To configure the GitHub token:
+
+1. Navigate to your repository's Settings.
+2. Click on Secrets in the left sidebar.
+3. Click on New repository secret.
+
+Name the secret `GH_TOKEN` and paste your generated GitHub token in the Value field.
+
+To reference this secret in the workflow file, use the following syntax:
+
+```yaml
+jobs:
+  lock-threads:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: dessant/lock-threads@v4
+        with:
+          github-token: ${{ secrets.GH_TOKEN }}
+```
+
+Ensure that the `github-token` key in the `with` section of your workflow file matches the name of the secret you created. With this setup, the `lock-threads` action can authenticate with the GitHub API to perform its tasks.
+
 #### Docs Contribution
 
 The documentation for OpenIMSDK includes:
