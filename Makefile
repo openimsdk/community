@@ -5,4 +5,8 @@
 # To use the 'init' target, run 'make init' from the command line.
 init:
 	@echo "Performing initialization tasks..."
-	# Add commands for initialization tasks here
+	cp config.template.ini config.ini
+	# Install dependencies
+	sudo apt-get update && sudo apt-get install -y necessary-package
+	# Compile the project if necessary
+	make compile
