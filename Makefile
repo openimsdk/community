@@ -5,4 +5,8 @@
 # To use the 'init' target, run 'make init' from the command line.
 init:
 	@echo "Performing initialization tasks..."
-	# Add commands for initialization tasks here
+	# Install project dependencies
+	pip install -r requirements.txt
+
+	# Setup environment variables
+	cp .env.example .env
