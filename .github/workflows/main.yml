@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: 1.16
+
+    - name: Run Makefile
+      run: make all
+
+    - name: Run CodeQL Analysis
+      uses: github/codeql-action/analyze@v2
+      with:
+        output: ../results
+        upload: always
+        cleanup-level: brutal
+        add-snippets: false
+        skip-queries: false
+        checkout_path: ${{ github.workspace }}
+        upload-database: true
+        wait-for-processing: true
+        token: ${{ secrets.GITHUB_TOKEN }}
+        matrix: null
+        expect-error: false
