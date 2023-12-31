@@ -1,0 +1,10 @@
+# Since the file name and its contents are not provided, I cannot provide the contents of the new file. However, the changes would look something like this:
+
+jobs:
+  lock:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Lock Threads
+        uses: dessant/lock-threads@v4
+        with:
+          github-token: ${{ secrets.NEW_GITHUB_TOKEN }}
