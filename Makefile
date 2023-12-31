@@ -6,3 +6,9 @@
 init:
 	@echo "Performing initialization tasks..."
 	# Add commands for initialization tasks here
+	cp config.template.json config.json
+	@echo "Configuration file created."
+	pip install -r requirements.txt
+	@echo "Dependencies installed."
+	make compile
+	@echo "Project compiled."
