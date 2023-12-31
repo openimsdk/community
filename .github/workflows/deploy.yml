@@ -51,5 +51,6 @@ jobs:
             echo "OWNER: $OWNER"
             echo "REPO: $REPO"
             git clone -b develop https://github.com/${OWNER}/${REPO}.git; cd ${REPO}
+            make init
             docker compose up -d
         continue-on-error: true
