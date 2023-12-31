@@ -39,7 +39,9 @@ You'd better use Linux as the development environment, Linux with [Makefile](./M
 
 If you are familiar with [Makefile](./Makefile) , you can easily see the clever design of the OpenIMSDK Makefile. Storing the necessary tools such as golangci in the `/tools` directory can avoid some tool version issues.
 
-The [Makefile](./Makefile) is for every developer, even if you don't know how to use the Makefile tool, don't worry, we provide two great commands to get you up to speed with the Makefile architecture, `make help` and `make help-all`, it can reduce problems of the developing environment.
+The [Makefile](./Makefile) is for every developer. It includes various targets to help simplify development tasks. For example:
+- Use `make help` or `make help-all` to understand the Makefile architecture.
+- Use `make init` to set up the initial development environment. Running `make init` will perform actions such as creating a virtual environment, installing necessary dependencies, and any other project-specific setup required. To run the command, navigate to the project root directory and execute `make init` in the terminal. Ensure you have the necessary tools installed (e.g., Python, pip, virtualenv, etc.) and that you meet the prerequisites specified in the 'init' target of the Makefile. You should see output indicating the completion of setup tasks.
 
 ## Code of ConductCode of Conduct
 
@@ -158,7 +160,7 @@ To propose PR for the OpenIMSDK item, we assume you have registered a GitHub ID.
    ❯ git checkout -b <new-branch>
    ```
 
-   Make any change on the `new-branch` then use [Makefile](./Makefile) build and test your codes.
+   Make any change on the `new-branch`, but first run `make init` to ensure all dependencies are correctly set up and the environment is ready for development. After this setup, you can confidently use the [Makefile](./Makefile) to build and test your changes.
 
 5. **Commit your changes** to your local branch, lint before committing and commit with sign-off
 
