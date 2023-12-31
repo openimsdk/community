@@ -6,3 +6,7 @@
 init:
 	@echo "Performing initialization tasks..."
 	# Add commands for initialization tasks here
+	# Assuming the project is a Python project that uses pip for dependency management and requires a virtual environment
+	python3 -m venv venv
+	source venv/bin/activate
+	pip install -r requirements.txt
