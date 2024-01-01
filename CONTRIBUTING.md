@@ -274,7 +274,7 @@ You can find some very formal PR in [RFC](https://github.com/OpenIMSDK/community
 
 **⚠️ DCO check:**
 
-We have a [DCO check](https://github.com/apps/dco) which runs on every **PR** to verify that the commit has been signed off.
+We have a [DCO check](https://github.com/apps/dco) that runs on every **PR** to verify that the commit has been signed off. Failing to sign off commits can result in GitHub Actions failing your workflow runs. It is essential that you do not overlook this step.
 
 Once [installed](https://github.com/apps/dco#usage), this integration will set the [status](https://developer.github.com/v3/repos/statuses/) to `failed` if commits in a Pull Request do not contain a valid `Signed-off-by` line.
 
@@ -306,6 +306,8 @@ git() {
 ```
 
 #### Docs Contribution
+
+**Note:** The `GITHUB_TOKEN` secret is used to authenticate GitHub Actions workflows. You must keep this token secure and should not share or expose it in any way.
 
 The documentation for OpenIMSDK includes:
 
