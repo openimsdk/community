@@ -1,0 +1,32 @@
+{
+  "tools": [
+    {
+      "name": "tool1",
+      "path": "/path/to/tool1"
+    },
+    {
+      "name": "tool2",
+      "path": "/path/to/tool2"
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "dependency1",
+      "action": "install"
+    },
+    {
+      "name": "dependency2",
+      "action": "install"
+    }
+  ],
+  "settings": [
+    {
+      "name": "setting1",
+      "value": "value1"
+    },
+    {
+      "name": "setting2",
+      "value": "value2"
+    }
+  ]
+}
