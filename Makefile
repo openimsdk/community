@@ -6,3 +6,5 @@
 init:
 	@echo "Performing initialization tasks..."
 	# Add commands for initialization tasks here
+	cp config.example.json config.json
+	npm install
