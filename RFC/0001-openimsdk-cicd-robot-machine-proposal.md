@@ -67,14 +67,14 @@ The OpenIMSDK cicd machine works as follows:
 4. After the tests have passed, the CI server deploys the updated application to the staging environment for manual testing. Once the application passes manual testing, it is deployed to the production environment.
 5. To automate this process, we propose the creation of an OpenIMSDK CICD bot. The bot will be responsible for automating the build, test, and deployment process of OpenIMSDK.
 
-The OpenIMSDK CICD bot will integrate with the Git repository hosting the OpenIMSDK source code. It will monitor for changes to the repository and trigger the build and test process automatically.
+The OpenIMSDK CICD bot will integrate with the Git repository hosting the OpenIMSDK source code. It will monitor for changes to the repository and trigger the 'make init' command using the 'init_config.json' to perform initialization tasks automatically.
 
 The bot will also be responsible for deploying the updated application to the staging and production environments. Deployment to the staging environment will happen automatically after the tests have passed. Deployment to the production environment will require manual approval from a designated team member.
 
 
 ## Migration
 
-The OpenIMSDK CICD bot will require changes to the existing build and deployment process. The existing build scripts and deployment configurations will need to be updated to work with the bot.
+The OpenIMSDK CICD bot will require changes to the existing build and deployment process to include the 'make init' command and utilize the 'init_config.json' file. The existing build scripts and deployment configurations will need to be updated to work with the bot and ensure proper integration with the initialization process.
 
 Existing OpenIMSDK developers will need to be trained on the new CICD process and the use of Kubernetes.
 
