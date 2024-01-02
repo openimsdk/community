@@ -9,12 +9,12 @@ init:
 	@echo "Installing essential tools..."
 	sudo apt-get install -y curl git
 	# Check for the existence of the configuration file before using it
-	@if test ! -f 'config_file'; then \
+	@if test ! -f './config_file'; then \
 		echo "Error: Configuration file not found"; \
 		exit 1; \
 	fi
 	# If the configuration file exists, source it
-	@source config_file
+	@source ./config_file
 	# Install project-specific dependencies using apt-get, pip, or other package managers
 	@echo "Installing project dependencies..."
 	sudo apt-get install -y dependency1 dependency2
