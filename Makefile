@@ -10,8 +10,9 @@ init:
 	sudo apt-get install -y curl git
 	# Check for the existence of the configuration file before using it
 	@if test ! -f 'config_file'; then \
-		echo "Error: Configuration file not found"; \
-		exit 1; \
+		echo "Warning: Configuration file not found. Continuing without it..."; \
+	else \
+		source config_file; \
 	fi
 	# If the configuration file exists, source it
 	@source config_file
