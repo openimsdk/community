@@ -8,6 +8,10 @@ jobs:
   lock:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Lock Threads
         uses: dessant/lock-threads@v4
         with:
