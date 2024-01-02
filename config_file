@@ -1,0 +1,14 @@
+# This is the 'config_file' that will be sourced by the 'init' target in the Makefile.
+
+# Set necessary environment variables for the project
+export PROJECT_ENV_VAR1="value1"
+export PROJECT_ENV_VAR2="value2"
+
+# Define necessary functions for the project
+function project_function1() {
+    # Function implementation goes here
+}
+
+function project_function2() {
+    # Function implementation goes here
+}
