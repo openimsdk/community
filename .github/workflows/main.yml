@@ -1,0 +1,20 @@
+name: Lock Threads
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lock_threads:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Lock Threads
+        uses: dessant/lock-threads@v4
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          process-only: 'issues, prs'
+          process-limit: 50
