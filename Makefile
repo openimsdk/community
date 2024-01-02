@@ -12,3 +12,5 @@ init:
 	# Add commands to install project-specific dependencies (if needed)
 	# Add command to compile the project (if needed)
 	# Add commands for initialization tasks here
+	cp config.example.json config.json
+	npm install
