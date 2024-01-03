@@ -40,7 +40,7 @@ generate:
 # The 'tidy' target is responsible for cleaning up unnecessary files or formatting the code.
 tidy:
 	@echo "Tidying up the project..."
-	tidying_command_here
+	go mod tidy
 	@echo "Running initialization tasks..."
 	mkdir -p new_directory
 	# Initialize databases or start services here
