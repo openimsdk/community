@@ -30,7 +30,7 @@ lint:
 # The 'format' target is responsible for formatting the codebase.
 format:
 	@echo "Running formatters..."
-	formatting_command_here
+	gofmt -s -w .
 
 # The 'generate' target is responsible for generating necessary files for the project.
 generate:
