@@ -25,7 +25,7 @@ init:
 # The 'lint' target is responsible for linting the codebase.
 lint:
 	@echo "Running linters..."
-	linting_command_here
+	golint ./...
 
 # The 'format' target is responsible for formatting the codebase.
 format:
