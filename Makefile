@@ -35,7 +35,7 @@ format:
 # The 'generate' target is responsible for generating necessary files for the project.
 generate:
 	@echo "Generating necessary files..."
-	generation_command_here
+	./generate-configs.sh
 
 # The 'tidy' target is responsible for cleaning up unnecessary files or formatting the code.
 tidy:
