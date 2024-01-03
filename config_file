@@ -1,0 +1,7 @@
+# This is a dummy configuration file for the OpenIMSDK project.
+# The actual contents of this file will depend on the specific configuration needs of the project.
+
+# Dummy configuration data
+KEY1=VALUE1
+KEY2=VALUE2
+KEY3=VALUE3
