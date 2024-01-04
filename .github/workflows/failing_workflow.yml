@@ -1,0 +1,19 @@
+name: Failing Workflow
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run issues-translate-action
+      uses: usthe/issues-translate-action@v2.8
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        source_language: auto
+        target_language: en
