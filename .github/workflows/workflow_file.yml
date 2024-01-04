@@ -1,0 +1,16 @@
+name: Workflow Name
+on: [push, pull_request]
+
+jobs:
+  job_name:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Translate issue
+        uses: usthe/issues-translate-action@v2.7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          # Add any other necessary credentials here, like so:
+          # other_credential: ${{ secrets.OTHER_CREDENTIAL }}
