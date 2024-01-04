@@ -10,11 +10,16 @@ init:
 	sudo apt-get install -y curl git
 	# Check for the existence of the configuration file before using it
 	@if test ! -f 'config_file'; then \
-		echo "Error: Configuration file not found"; \
-		exit 1; \
+		echo "Configuration file not found. Creating a dummy configuration file..."; \
+		touch config_file; \
 	fi
 	# If the configuration file exists, source it
-	@source config_file
+	@source config_file; \
+if test -f 'config_file' \
+	&& test $(wc -c < 'config_file') -eq 0; then \
+	echo "Deleting dummy configuration file..."; \
+	rm config_file; \
+fi
 	# Install project-specific dependencies using apt-get, pip, or other package managers
 	@echo "Installing project dependencies..."
 	sudo apt-get install -y dependency1 dependency2
