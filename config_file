@@ -1,0 +1,12 @@
+# The contents of the 'config_file' could look something like this:
+
+# Set environment variables
+export VAR1=value1
+export VAR2=value2
+
+# Set paths to resources
+export RESOURCE_PATH=/path/to/resource
+
+# Other configuration parameters
+export PARAM1=value3
+export PARAM2=value4
