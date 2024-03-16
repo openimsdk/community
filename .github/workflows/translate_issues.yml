@@ -1,0 +1,17 @@
+name: Translate Issues
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Translate issue
+      uses: usthe/issues-translate-action@v2.7
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
