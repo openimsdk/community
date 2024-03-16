@@ -204,6 +204,36 @@ To propose PR for the OpenIMSDK item, we assume you have registered a GitHub ID.
 
 ## Style and Specification
 
+## Setting up Your GitHub Token
+
+Before contributing to the project, you need to set up a GitHub token. This token is used for authenticating your GitHub actions when interacting with the GitHub API, for example when using automated tools, such as GitHub actions, that require GitHub permissions.
+
+#### Generating a New Token
+
+To generate a new GitHub token, follow these steps:
+
+1. Go to your GitHub settings.
+2. Navigate to the 'Developer settings'.
+3. Select 'Personal access tokens', then click 'Generate new token'.
+4. You can now select the necessary scopes or permissions your token needs to have. It's recommended to use the minimal scope necessary for your tasks.
+5. Click 'Generate token' at the bottom of the page.
+
+Once you have generated your token, keep it safe. It's a sensitive piece of information that grants access to your GitHub account.
+
+#### Adding Your Token to Repository Secrets
+
+To add your generated GitHub token to the repository secrets:
+
+1. Go to the main page of the repository on GitHub.
+2. Click 'Settings' then navigate to 'Secrets'.
+3. Click on 'New repository secret'.
+4. Name your secret (e.g., 'GITHUB_TOKEN') and paste your generated token in the value field.
+5. Click 'Add secret'.
+
+Your token is now stored securely and can be used by workflows and actions within the repository.
+
+---
+
 #### Commit Rules
 
 Actually in OpenIMSDK, we take two rules serious when committing:
