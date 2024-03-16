@@ -1,0 +1,17 @@
+name: Unknown Workflow
+
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Translate Issues
+        uses: usthe/issues-translate-action@v2.7
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          translate_token: ${{ secrets.TRANSLATE_TOKEN }}
