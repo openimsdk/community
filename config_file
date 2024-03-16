@@ -1,0 +1,3 @@
+# This is a shell script that exports any environment variables or sets any configuration that the 'make init' command requires.
+export DEPENDENCY1_VERSION="1.0.0"
+export DEPENDENCY2_VERSION="2.0.0"
