@@ -8,6 +8,14 @@ jobs:
   lock:
     runs-on: ubuntu-latest
     steps:
+      - name: Check GitHub Token
+        run: |
+          response=$(curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/user)
+          if [ "$response" == "Bad credentials" ]; then
+            echo "Invalid GitHub token"
+            exit 1
+          fi
+
       - name: Lock Threads
         uses: dessant/lock-threads@v4
         with:
