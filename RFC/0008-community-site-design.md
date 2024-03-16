@@ -87,7 +87,23 @@ Automation is the cornerstone of efficient documentation management. We've insti
     make new-post POST_NAME="openim-offline-deployment-design"
     ```
 
-+ **Testing & Deployment:** GitHub actions test the documents, generating test reports. Additionally, a DevOps workflow ensures documentation accuracy and relevance.
++ **Testing & Deployment:** GitHub Actions test the documents, generating test reports. Additionally, a DevOps workflow ensures documentation accuracy and relevance.
+
+   + **GitHub Actions Workflow with `dessant/lock-threads@v4`**:
+
+     The `dessant/lock-threads@v4` action is utilized to automatically lock closed issues and pull requests after a period of inactivity. This action requires proper authentication using a GitHub token. To set this up, a secret named `GH_TOKEN` containing the GitHub token must be created in the repository settings, under Secrets. This secret is then referenced in the GitHub Actions workflow file as follows:
+
+     ```yaml
+     jobs:
+       lock-threads:
+         runs-on: ubuntu-latest
+         steps:
+           - uses: dessant/lock-threads@v4
+             with:
+               github-token: ${{ secrets.GH_TOKEN }}
+     ```
+
+     Ensure that the secret you provide matches the one configured in your repository. It is necessary for authentication with the GitHub API so that `dessant/lock-threads@v4` can perform its functions effectively.
 
   + Upon passing tests, GitHub actions deploy these, synchronizing with Netlify. Netlify then completes the deployment, rendering the corresponding web pages.
   + Notably, `https://netlify.app/` leverages plugins for accelerated access in regions like China.
