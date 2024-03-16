@@ -25,22 +25,22 @@ init:
 # The 'lint' target is responsible for linting the codebase.
 lint:
 	@echo "Running linters..."
-	linting_command_here
+	golint ./...
 
 # The 'format' target is responsible for formatting the codebase.
 format:
 	@echo "Running formatters..."
-	formatting_command_here
+	gofmt -s -w .
 
 # The 'generate' target is responsible for generating necessary files for the project.
 generate:
 	@echo "Generating necessary files..."
-	generation_command_here
+	./generate-configs.sh
 
 # The 'tidy' target is responsible for cleaning up unnecessary files or formatting the code.
 tidy:
 	@echo "Tidying up the project..."
-	tidying_command_here
+	go mod tidy
 	@echo "Running initialization tasks..."
 	mkdir -p new_directory
 	# Initialize databases or start services here
