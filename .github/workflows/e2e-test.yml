@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-name: OpenIM Linux System E2E Test
+name: OpenIM E2E And API Test
 
 on:
   workflow_dispatch:
@@ -34,7 +34,7 @@ jobs:
     steps:
 
       - name: Set up Go 1.21
-        uses: actions/setup-go@v4
+        uses: actions/setup-go@v5
         with:
           go-version: 1.21
         id: go
@@ -60,7 +60,7 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Set up Go ${{ matrix.go_version }}
-      uses: actions/setup-go@v4
+      uses: actions/setup-go@v5
       with:
         go-version: ${{ matrix.go_version }}
       id: go
@@ -82,7 +82,7 @@ jobs:
         sudo make tidy
         sudo make tools.verify.go-gitlint
 
-    - name: Build, Start
+    - name: Build, Start(make build && make start)
       run: |
         sudo ./scripts/install/install.sh -i
 
@@ -90,13 +90,47 @@ jobs:
       run: |
         sudo ./scripts/install/install.sh -s
 
-    - name: Exec OpenIM API test
+    - name: Exec OpenIM API test (make test-api)
       run: |
+        mkdir -p ./tmp
+        touch ./tmp/test.md
+        echo "# OpenIM Test" >> ./tmp/test.md
+        echo "## OpenIM API Test" >> ./tmp/test.md
+        echo "<details><summary>Command Output for OpenIM API Test</summary>" >> ./tmp/test.md
+        echo "<pre><code>" >> ./tmp/test.md
+        sudo make test-api | tee -a ./tmp/test.md
+        echo "</code></pre>" >> ./tmp/test.md
+        echo "</details>" >> ./tmp/test.md
+
         sudo make test-api
-    
-    - name: Exec OpenIM E2E test
+
+    - name: Exec OpenIM E2E Test (make test-e2e)
       run: |
+        echo "" >> ./tmp/test.md
+        echo "## OpenIM E2E Test" >> ./tmp/test.md
+        echo "<details><summary>Command Output for OpenIM E2E Test</summary>" >> ./tmp/test.md
+        echo "<pre><code>" >> ./tmp/test.md
+        sudo make test-e2e | tee -a ./tmp/test.md
+        echo "</code></pre>" >> ./tmp/test.md
+        echo "</details>" >> ./tmp/test.md
+
         sudo make test-e2e
+
+    - name: Comment PR with file
+      uses: thollander/actions-comment-pull-request@v2
+      with:
+        filePath: ./tmp/test.md
+        comment_tag: nrt_file
+        reactions: eyes, rocket
+        mode: recreate
+        GITHUB_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN }}
+      continue-on-error: true
+
+    - name: Check outputs
+      run: |
+        echo "id : ${{ steps.nrt_message.outputs.id }}"
+        echo "body : ${{ steps.nrt_message.outputs.body }}"
+        echo "html_url : ${{ steps.nrt_message.outputs.html_url }}"
 
     - name: Exec OpenIM System uninstall
       run: |
